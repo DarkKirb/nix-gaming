@@ -25,7 +25,7 @@
       # output each overlay in its own set
       overlays = utils.lib.exportOverlays { inherit (self) pkgs inputs; };
 
-      lib.mkPatches = import ./lib { inherit inputs; };
+      lib = import ./lib { inherit inputs; };
 
       # build outputs
       outputsBuilder = channels: rec {
