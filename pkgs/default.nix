@@ -1,27 +1,28 @@
-{ inputs, self }:
+{ inputs, pkgs }:
 
-final: prev:
 let
   wineBuilder = wine: build: extra: (import ./wine ({
     inherit inputs build;
-    inherit (prev) lib pkgsCross pkgsi686Linux fetchFromGitHub callPackage stdenv_32bit;
-    pkgs = prev;
+    inherit (pkgs) lib pkgsCross pkgsi686Linux fetchFromGitHub callPackage stdenv_32bit;
+    inherit pkgs;
     supportFlags = (import ./wine/supportFlags.nix).${build};
   } // extra)).${wine};
-in
-{
-  osu-lazer-bin = prev.callPackage ./osu-lazer-bin { };
 
-  osu-stable = prev.callPackage ./osu-stable {
-    wine = final.wine-osu;
-    inherit (final) winestreamproxy;
+  inherit (pkgs) callPackage;
+in
+rec {
+  osu-lazer-bin = callPackage ./osu-lazer-bin { };
+
+  osu-stable = callPackage ./osu-stable {
+    wine = wine-osu;
+    inherit winestreamproxy;
   };
 
-  rocket-league = prev.callPackage ./rocket-league { wine = final.wine-tkg; };
+  rocket-league = callPackage ./rocket-league { wine = wine-tkg; };
 
-  technic-launcher = prev.callPackage ./technic-launcher { };
+  technic-launcher = callPackage ./technic-launcher { };
 
-  winestreamproxy = prev.callPackage ./winestreamproxy { wine = final.wine-tkg; };
+  winestreamproxy = callPackage ./winestreamproxy { wine = wine-tkg; };
 
   wine-osu = wineBuilder "wine-osu" "base" { };
 

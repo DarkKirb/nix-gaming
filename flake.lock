@@ -1,27 +1,12 @@
 {
   "nodes": {
-    "flake-utils": {
-      "locked": {
-        "lastModified": 1634851050,
-        "narHash": "sha256-N83GlSGPJJdcqhUxSCS/WwW5pksYf3VP1M13cDRTSVA=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "c91f3de5adaf1de973b797ef7485e441a65b8935",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1637579689,
-        "narHash": "sha256-w9jJ0l9TgSeoMRQZOk+9EqWcNSsOvqcvS3mj067M7II=",
+        "lastModified": 1641606272,
+        "narHash": "sha256-sv2PF39XyrmkzGsedXEAq+Sd9fa63eeLB4VtiEVZpz0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "108f913823dc1977b57e34bf86818c08fad8536d",
+        "rev": "b4ee6e0b5dbc68aa5eb81ba50babb1c4b7eab5a7",
         "type": "github"
       },
       "original": {
@@ -32,42 +17,7 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
-        "utils": "utils"
-      }
-    },
-    "utils": {
-      "inputs": {
-        "flake-utils": "flake-utils"
-      },
-      "locked": {
-        "lastModified": 1636270960,
-        "narHash": "sha256-5M3ytlFl9q6up8twhJ63JE2A5igrHR94YsHTOmKzHwA=",
-        "owner": "gytis-ivaskevicius",
-        "repo": "flake-utils-plus",
-        "rev": "e22fcd75da49c122ec7a0e30785e3edf2f69cfe7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gytis-ivaskevicius",
-        "repo": "flake-utils-plus",
-        "type": "github"
-      }
-    },
-    "wine-tkg": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1637516622,
-        "narHash": "sha256-8HiuNsSVfmIXv+mw+5/N8gJ0g3vpx1nfm22MynYQKFQ=",
-        "owner": "Tk-Glitch",
-        "repo": "wine-tkg",
-        "rev": "8b6c44352c188872eb0e12372ebe77ea569b873c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Tk-Glitch",
-        "repo": "wine-tkg",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
