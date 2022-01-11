@@ -32,9 +32,6 @@
 
       #lib.mkPatches = import ./lib { inherit inputs; };
 
-      nixosModules.pipewireLowLatency = import ./modules/pipewireLowLatency.nix;
-      nixosModule = self.nixosModules.pipewireLowLatency;
-
       packages = forAllSystems (system:
         /* lib.filterAttrs (n: v: v.meta.platforms == system) */ (import ./pkgs {
         inherit inputs;
@@ -43,5 +40,8 @@
     in
     {
       inherit apps packages;
+
+      nixosModules.pipewireLowLatency = import ./modules/pipewireLowLatency.nix;
+      nixosModule = self.nixosModules.pipewireLowLatency;
     };
 }
